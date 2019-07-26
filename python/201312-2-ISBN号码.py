@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# coding=utf-8
-
 isbn = input()
 ch = isbn[-1]
 ss = ''.join(isbn.split('-')[:3])
@@ -12,9 +9,10 @@ for c in ss:
 
 mod = sum % 11
 
-print(mod)
-
-if mod < 10 and mod == int(ch) or mod == 10 and ch == 'X':
+if ch == str(mod) or ch == 'X' and mod == 10:
     print("Right")
 else:
-    print(isbn[:-1] + str(mod) if mod < 10 else 'X')
+    if mod == 10:
+        print(isbn[:-1] + 'X')
+    else:
+        print(isbn[:-1] + str(mod))
