@@ -29,4 +29,3 @@ int main()
         printf("%d-%d-%d-%c\n", a, b, c, (tmp == 10 ? 'X' : tmp + '0'));
     return 0;
 }
-
